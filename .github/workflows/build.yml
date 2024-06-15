@@ -1,0 +1,12 @@
+on:
+  push:
+    branch: master
+
+jobs:
+  build-pacman-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pacman-repo-builder/action@v1
+        with:
+          command: build-pacman-repo build
